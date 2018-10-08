@@ -4,3 +4,6 @@ body {
 form {
   display: inline-block;
 }
+div.a {
+  padding: 5px;
+}

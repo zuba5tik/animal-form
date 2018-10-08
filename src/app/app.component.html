@@ -2,28 +2,36 @@
   <form [formGroup]="animalForm">
     <mat-card>
       <mat-form-field>
-        <input matInput placeholder="Name" type="text" formControlName="name">
+        <input matInput placeholder="Name" type="text" formControlName="animalName">
       </mat-form-field>
       <p></p>
-      <!-- <div [ngSwitch]="animalForm.value.type" > -->
-        <!-- <div *ngSwitchCase="'text'"> -->
-          <!-- <mat-form-field>
-            <input matInput placeholder="Animal Type" type="text" formControlName="type">
-          </mat-form-field> -->
-        <!-- </div> -->
-        <!-- <div *ngSwitchCase="'dropdown'"> -->
+
+      <!-- <div [ngSwitch]="'namee'"> -->
+        <div *ngIf="inputType === 'text'">
             <mat-form-field>
-              <mat-select placeholder="Animal Type" formControlName="type">
+              <input matInput placeholder="Animal type text" type="text" formControlName="animalType">
+            </mat-form-field>
+        </div>
+        <div *ngIf="inputType === 'select'">
+          <mat-form-field>
+              <mat-select placeholder="Animal type dropdown" formControlName="animalType">
                   <mat-option *ngFor="let ani of types" [value]="ani.key">
                     {{ani.label}}
                   </mat-option>
               </mat-select>
             </mat-form-field>
-          <!-- </div>
-      </div> -->
-      <div>
-        <button mat-raised-button color="accent">Dropdown</button>
+        <!-- </div> -->
       </div>
+      <mat-toolbar>
+          <mat-toolbar-row>
+            <div class="a">
+              <button mat-raised-button color="accent" (click)="inputType='select'">DropDown</button>
+            </div>
+            <div class="a">
+              <button mat-raised-button color="accent" (click)="inputType='text'">Text</button>
+            </div>
+          </mat-toolbar-row>
+        </mat-toolbar>
     </mat-card>
   </form>
   <pre>{{animalForm.value|json}}</pre>
