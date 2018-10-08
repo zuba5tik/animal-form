@@ -1,0 +1,30 @@
+<body>
+  <form [formGroup]="animalForm">
+    <mat-card>
+      <mat-form-field>
+        <input matInput placeholder="Name" type="text" formControlName="name">
+      </mat-form-field>
+      <p></p>
+      <!-- <div [ngSwitch]="animalForm.value.type" > -->
+        <!-- <div *ngSwitchCase="'text'"> -->
+          <!-- <mat-form-field>
+            <input matInput placeholder="Animal Type" type="text" formControlName="type">
+          </mat-form-field> -->
+        <!-- </div> -->
+        <!-- <div *ngSwitchCase="'dropdown'"> -->
+            <mat-form-field>
+              <mat-select placeholder="Animal Type" formControlName="type">
+                  <mat-option *ngFor="let ani of types" [value]="ani.key">
+                    {{ani.label}}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+          <!-- </div>
+      </div> -->
+      <div>
+        <button mat-raised-button color="accent">Dropdown</button>
+      </div>
+    </mat-card>
+  </form>
+  <pre>{{animalForm.value|json}}</pre>
+</body>
