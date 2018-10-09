@@ -2,33 +2,37 @@
   <form [formGroup]="animalForm">
     <mat-card>
       <mat-form-field>
-        <input matInput placeholder="Name" type="text" formControlName="animalName">
+        <input matInput class="a" placeholder="Name" type="text" formControlName="animalName">
       </mat-form-field>
       <p></p>
-
-      <!-- <div [ngSwitch]="'namee'"> -->
         <div *ngIf="inputType === 'text'">
             <mat-form-field>
-              <input matInput placeholder="Animal type text" type="text" formControlName="animalType">
+              <input matInput class="a" placeholder="Animal type text" type="text" formControlName="animalType">
             </mat-form-field>
         </div>
-        <div *ngIf="inputType === 'select'">
-          <mat-form-field>
-              <mat-select placeholder="Animal type dropdown" formControlName="animalType">
+        <div *ngIf="inputType === 'select'" formGroupName="animalType">
+          <!-- <mat-form-field>
+              <mat-select placeholder="Animal type dropdown" formControlName="typeKey">
                   <mat-option *ngFor="let ani of types" [value]="ani.key">
                     {{ani.label}}
                   </mat-option>
               </mat-select>
             </mat-form-field>
-        <!-- </div> -->
+            <br> -->
+            <mat-form-field>
+              <input matInput placeholder="Key" type="text" formControlName="typeKey">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Label" type="text" formControlName="typeLabel">
+            </mat-form-field>
       </div>
       <mat-toolbar>
           <mat-toolbar-row>
             <div class="a">
-              <button mat-raised-button color="accent" (click)="inputType='select'">DropDown</button>
+              <button mat-raised-button color="accent" (click)="inputDropDown()">DropDown</button>
             </div>
             <div class="a">
-              <button mat-raised-button color="accent" (click)="inputType='text'">Text</button>
+              <button mat-raised-button color="accent" (click)="inputText()">Text</button>
             </div>
           </mat-toolbar-row>
         </mat-toolbar>

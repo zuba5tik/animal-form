@@ -26,19 +26,52 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 export class AppComponent {
   title = 'animal-app';
   animalForm: FormGroup;
+  animalType = new FormGroup({
+    typeLabel: new FormControl(),
+    typeKey: new FormControl(),
+  });
   constructor(private fb: FormBuilder) {
     this.animalForm = this.fb.group({
       animalName: [],
       animalType: [],
-      // animalType: this.inputType === 'select' ? this.fb.group({
-      //   typeKey: '',
-      //   typeLabel: '',
-      // }) : '',
+      // animalType: this.animalType = this.fb.group({
+      //   typeLabel: [],
+      //   typeKey: [],
+      // })
     });
   }
 
+  inputDropDown() {
+    // this.animalType.addControl('typeKey', new FormControl());
+    this.animalForm.reset();
+    this.animalForm.removeControl('animalType');
+    this.animalForm.registerControl('animalType', new FormGroup({typeLabel: new FormControl(), typeKey: new FormControl()}));
+    // this.animalType.addControl('typeLabel', new FormControl());
+    // this.animalType.addControl('typeKey', new FormControl());
+    this.inputType = 'select';
+  }
+
+  inputText() {
+    this.animalForm.reset();
+    this.animalForm.removeControl('animalType');
+    this.animalForm.addControl('animalType', new FormControl());
+    this.inputType = 'text';
+  }
+
+  // getField() {
+  //   this.types = [
+  //     {
+  //       'key': this.animalType.typeKey,
+  //       'label': this.animalType.typeLabel,
+  //     },
+  //     ...this.types,
+  //   ];
+  // }
+
+  // tslint:disable-next-line:member-ordering
   inputType = 'text';
 
+  // tslint:disable-next-line:member-ordering
   types = [
     {'key': 'dog-0', 'label': 'Dog'},
     {'key': 'cat-1', 'label': 'Cat'}
