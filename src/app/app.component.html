@@ -26,16 +26,9 @@
               <input matInput placeholder="Label" type="text" formControlName="typeLabel">
             </mat-form-field>
       </div>
-      <mat-toolbar>
-          <mat-toolbar-row>
             <div class="a">
-              <button mat-raised-button color="accent" (click)="inputDropDown()">DropDown</button>
+              <button mat-raised-button color="accent" (click)="inputDropDown()">Change field type</button>
             </div>
-            <div class="a">
-              <button mat-raised-button color="accent" (click)="inputText()">Text</button>
-            </div>
-          </mat-toolbar-row>
-        </mat-toolbar>
     </mat-card>
   </form>
   <pre>{{animalForm.value|json}}</pre>
