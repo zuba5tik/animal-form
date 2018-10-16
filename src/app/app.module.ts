@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -35,10 +35,12 @@ import {MatCheckboxModule,
 MatPaginatorModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { AppTestComponent } from './app-test/app-test.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppTestComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +80,7 @@ import { AppComponent } from './app.component';
     MatPaginatorModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class AppModule { }

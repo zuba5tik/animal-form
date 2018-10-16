@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
   title = 'animal-app';
   inputType = 'select';
   animalForm: FormGroup;
@@ -14,13 +16,18 @@ export class AppComponent {
     typeLabel: new FormControl(),
     typeKey: new FormControl(),
   }) : new FormControl();
+
   constructor(private fb: FormBuilder) {
     this.animalForm = this.fb.group({
-      animalName: [],
-      animalType: this.inputType === 'select' ? new FormGroup({
-        typeLabel: new FormControl(),
-        typeKey: new FormControl()}) : [],
+      'animalName': ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+      'animalType': this.inputType === 'select' ? new FormGroup({
+        'typeLabel': new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z ]*')]),
+        'typeKey': new FormControl()}) : [],
     });
+  }
+
+  ngOnInit() {
+
   }
 
   inputDropDown() {

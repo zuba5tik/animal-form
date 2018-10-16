@@ -1,31 +1,32 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { text } from '@angular/core/src/render3/instructions';
 
-describe('AppComponent', () => {
-  beforeEach(async(() => {
+describe('Animal form', () => {
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+
+  beforeEach(async() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      imports: [ FormsModule, ReactiveFormsModule],
+      declarations: [AppComponent],
     }).compileComponents();
-  }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
   });
 
-  it(`should have as title 'animal-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('animal-app');
+  it('is component defined', () => {
+    expect(component).toBeDefined();
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to animal-app!');
+  it('is form invalid when empty', () => {
+    let petName = component.animalForm.controls['animalName'];
+    petName.setValue(null);
+    // let petLabel = component.animalForm.controls['typeLabel'];
+    // petLabel.setValue(null);
+    expect(component.animalForm.controls['animalName']).toMatchSnapshot();
+    // expect(component.animalForm.controls['typeLabel'].valid).toBeFalsy();
   });
 });
