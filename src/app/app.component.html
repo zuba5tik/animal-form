@@ -1,16 +1,16 @@
-<!-- <body>
+<body>
   <form [formGroup]="animalForm">
-    <mat-card>
-      <mat-form-field>
+    <!-- <mat-card> -->
+      <!-- <mat-form-field> -->
         <input matInput class="a" placeholder="Name" type="text" formControlName="animalName">
-      </mat-form-field>
+      <!-- </mat-form-field> -->
       <p></p>
         <div *ngIf="inputType === 'text'">
-            <mat-form-field>
+            <!-- <mat-form-field> -->
               <input matInput class="a" placeholder="Animal type text" type="text" formControlName="animalType">
-            </mat-form-field>
+            <!-- </mat-form-field> -->
         </div>
-        <div *ngIf="inputType === 'select'" formGroupName="animalType"> -->
+        <div *ngIf="inputType === 'select'" formGroupName="animalType">
           <!-- <mat-form-field>
               <mat-select placeholder="Animal type dropdown" formControlName="typeKey">
                   <mat-option *ngFor="let ani of types" [value]="ani.key">
@@ -19,17 +19,17 @@
               </mat-select>
             </mat-form-field>
             <br> -->
-            <!-- <mat-form-field>
+            <!-- <mat-form-field> -->
               <input matInput placeholder="Key" type="text" formControlName="typeKey">
-            </mat-form-field>
-            <mat-form-field>
+            <!-- </mat-form-field> -->
+            <!-- <mat-form-field> -->
               <input matInput placeholder="Label" type="text" formControlName="typeLabel">
-            </mat-form-field>
+            <!-- </mat-form-field> -->
       </div>
             <div class="a">
               <button mat-raised-button color="accent" (click)="inputDropDown()">Change field type</button>
             </div>
-    </mat-card>
+    <!-- </mat-card> -->
   </form>
   <pre>{{animalForm.value|json}}</pre>
-</body> -->
+</body>

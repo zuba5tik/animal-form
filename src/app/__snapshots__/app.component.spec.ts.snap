@@ -1,5 +1,178 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Animal form inputDropDown should work 1`] = `"select"`;
+
+exports[`Animal form inputDropDown should work 2`] = `
+FormGroup {
+  "_onCollectionChange": [Function],
+  "_onDisabledChange": Array [],
+  "asyncValidator": null,
+  "controls": Object {
+    "animalName": FormControl {
+      "_onChange": Array [],
+      "_onCollectionChange": [Function],
+      "_onDisabledChange": Array [],
+      "_parent": [Circular],
+      "_pendingChange": false,
+      "_pendingDirty": false,
+      "_pendingTouched": false,
+      "_pendingValue": null,
+      "asyncValidator": null,
+      "errors": Object {
+        "required": true,
+      },
+      "pristine": true,
+      "status": "INVALID",
+      "statusChanges": EventEmitter {
+        "__isAsync": false,
+        "_isScalar": false,
+        "closed": false,
+        "hasError": false,
+        "isStopped": false,
+        "observers": Array [],
+        "thrownError": null,
+      },
+      "touched": false,
+      "validator": [Function],
+      "value": null,
+      "valueChanges": EventEmitter {
+        "__isAsync": false,
+        "_isScalar": false,
+        "closed": false,
+        "hasError": false,
+        "isStopped": false,
+        "observers": Array [],
+        "thrownError": null,
+      },
+    },
+    "animalType": FormGroup {
+      "_onCollectionChange": [Function],
+      "_onDisabledChange": Array [],
+      "_parent": [Circular],
+      "asyncValidator": null,
+      "controls": Object {
+        "typeKey": FormControl {
+          "_onChange": Array [],
+          "_onCollectionChange": [Function],
+          "_onDisabledChange": Array [],
+          "_parent": [Circular],
+          "_pendingValue": null,
+          "asyncValidator": null,
+          "errors": null,
+          "pristine": true,
+          "status": "VALID",
+          "statusChanges": EventEmitter {
+            "__isAsync": false,
+            "_isScalar": false,
+            "closed": false,
+            "hasError": false,
+            "isStopped": false,
+            "observers": Array [],
+            "thrownError": null,
+          },
+          "touched": false,
+          "validator": null,
+          "value": null,
+          "valueChanges": EventEmitter {
+            "__isAsync": false,
+            "_isScalar": false,
+            "closed": false,
+            "hasError": false,
+            "isStopped": false,
+            "observers": Array [],
+            "thrownError": null,
+          },
+        },
+        "typeLabel": FormControl {
+          "_onChange": Array [],
+          "_onCollectionChange": [Function],
+          "_onDisabledChange": Array [],
+          "_parent": [Circular],
+          "_pendingValue": null,
+          "asyncValidator": null,
+          "errors": null,
+          "pristine": true,
+          "status": "VALID",
+          "statusChanges": EventEmitter {
+            "__isAsync": false,
+            "_isScalar": false,
+            "closed": false,
+            "hasError": false,
+            "isStopped": false,
+            "observers": Array [],
+            "thrownError": null,
+          },
+          "touched": false,
+          "validator": null,
+          "value": null,
+          "valueChanges": EventEmitter {
+            "__isAsync": false,
+            "_isScalar": false,
+            "closed": false,
+            "hasError": false,
+            "isStopped": false,
+            "observers": Array [],
+            "thrownError": null,
+          },
+        },
+      },
+      "errors": null,
+      "pristine": true,
+      "status": "VALID",
+      "statusChanges": EventEmitter {
+        "__isAsync": false,
+        "_isScalar": false,
+        "closed": false,
+        "hasError": false,
+        "isStopped": false,
+        "observers": Array [],
+        "thrownError": null,
+      },
+      "touched": false,
+      "validator": null,
+      "value": Object {
+        "typeKey": null,
+        "typeLabel": null,
+      },
+      "valueChanges": EventEmitter {
+        "__isAsync": false,
+        "_isScalar": false,
+        "closed": false,
+        "hasError": false,
+        "isStopped": false,
+        "observers": Array [],
+        "thrownError": null,
+      },
+    },
+  },
+  "errors": null,
+  "pristine": true,
+  "status": "INVALID",
+  "statusChanges": EventEmitter {
+    "__isAsync": false,
+    "_isScalar": false,
+    "closed": false,
+    "hasError": false,
+    "isStopped": false,
+    "observers": Array [],
+    "thrownError": null,
+  },
+  "touched": false,
+  "validator": null,
+  "value": Object {
+    "animalName": null,
+  },
+  "valueChanges": EventEmitter {
+    "__isAsync": false,
+    "_isScalar": false,
+    "closed": false,
+    "hasError": false,
+    "isStopped": false,
+    "observers": Array [],
+    "thrownError": null,
+  },
+}
+`;
 
 exports[`Animal form is form invalid when empty 1`] = `
 FormControl {
@@ -174,4 +347,76 @@ FormControl {
     "thrownError": null,
   },
 }
+`;
+
+exports[`Animal form shoud spy 1`] = `
+<app-root
+  animalForm={[Function FormGroup]}
+  animalType={[Function FormGroup]}
+  fb={[Function FormBuilder]}
+  inputType={[Function String]}
+  title={[Function String]}
+  types={[Function Array]}
+>
+  <body>
+    <form
+      class="ng-untouched ng-pristine ng-invalid"
+      ng-reflect-form="[object Object]"
+      novalidate=""
+    >
+      <input
+        class="a ng-untouched ng-pristine ng-invalid"
+        formcontrolname="animalName"
+        matinput=""
+        ng-reflect-name="animalName"
+        placeholder="Name"
+        type="text"
+      />
+      <p />
+      
+      
+      <div
+        class="ng-untouched ng-pristine ng-invalid"
+        formgroupname="animalType"
+        ng-reflect-name="animalType"
+      >
+        <input
+          class="ng-untouched ng-pristine ng-valid"
+          formcontrolname="typeKey"
+          matinput=""
+          ng-reflect-name="typeKey"
+          placeholder="Key"
+          type="text"
+        />
+        <input
+          class="ng-untouched ng-pristine ng-invalid"
+          formcontrolname="typeLabel"
+          matinput=""
+          ng-reflect-name="typeLabel"
+          placeholder="Label"
+          type="text"
+        />
+      </div>
+      <div
+        class="a"
+      >
+        <button
+          color="accent"
+          mat-raised-button=""
+        >
+          Change field type
+        </button>
+      </div>
+    </form>
+    <pre>
+      {
+    "animalName": "123",
+    "animalType": {
+      "typeLabel": "",
+      "typeKey": null
+    }
+  }
+    </pre>
+  </body>
+</app-root>
 `;

@@ -17,6 +17,11 @@ export class AppComponent implements OnInit {
     typeKey: new FormControl(),
   }) : new FormControl();
 
+  types = [
+    {'key': 'dog-0', 'label': 'Dog'},
+    {'key': 'cat-1', 'label': 'Cat'}
+  ];
+
   constructor(private fb: FormBuilder) {
     this.animalForm = this.fb.group({
       'animalName': ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
@@ -52,13 +57,4 @@ export class AppComponent implements OnInit {
   //     ...this.types,
   //   ];
   // }
-
-  // tslint:disable-next-line:member-ordering
-  // inputType = 'select';
-
-  // tslint:disable-next-line:member-ordering
-  types = [
-    {'key': 'dog-0', 'label': 'Dog'},
-    {'key': 'cat-1', 'label': 'Cat'}
-  ];
 }

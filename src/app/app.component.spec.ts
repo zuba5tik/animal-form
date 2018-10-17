@@ -29,4 +29,31 @@ describe('Animal form', () => {
     expect(component.animalForm.controls['animalName']).toMatchSnapshot();
     // expect(component.animalForm.controls['typeLabel'].valid).toBeFalsy();
   });
+
+  it('should click', async(() => {
+    spyOn(component, 'inputDropDown');
+
+    let button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+
+    fixture.whenStable().then(() => {
+      expect(component.inputDropDown).toHaveBeenCalled();
+    });
+  }));
+
+  it('inputDropDown should work', () => {
+    component.inputType = 'text';
+    component.inputDropDown();
+
+    expect(component.inputType).toMatchSnapshot();
+    expect(component.animalForm).toMatchSnapshot();
+  });
+
+  it('shoud spy', () => {
+    let petName = component.animalForm.controls['animalName'];
+    petName.setValue('123');
+    fixture.detectChanges();
+
+    expect(fixture).toMatchSnapshot();
+  });
 });
