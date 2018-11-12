@@ -1,3 +1,4 @@
+import { LoginFormComponent } from './login-form/login-form.component';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';

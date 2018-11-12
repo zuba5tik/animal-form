@@ -1,0 +1,18 @@
+<body>
+  <form [formGroup]="login">
+    <mat-card class="a">
+      <mat-form-field>
+        <input matInput type="text" placeholder="email" formControlName="email">
+      </mat-form-field>
+      <div *ngIf="add === true">
+        <mat-form-field>
+          <input matInput type="text" placeholder="password" formControlName="password">
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-raised-button color="accent" (click)="submit()">Submit</button>
+      </div>
+    </mat-card>
+  </form>
+  <pre>{{login.value|json}}</pre>
+</body>

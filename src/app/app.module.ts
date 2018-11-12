@@ -36,11 +36,13 @@ MatPaginatorModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppTestComponent } from './app-test/app-test.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppTestComponent
+    AppTestComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
