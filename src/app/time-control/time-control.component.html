@@ -1,0 +1,14 @@
+<body>
+    <mat-card>
+      <mat-form-field floatLabel="never">
+          <input matInput [formControl]="time" type="text" placeholder="Time Picker" [ngxTimepicker]="picker" [format]="24" [disableClick]="true">
+          <ngx-material-timepicker-toggle matSuffix [for]="picker"></ngx-material-timepicker-toggle>
+          <ngx-material-timepicker #picker></ngx-material-timepicker>
+      </mat-form-field>
+      <mat-button-toggle (click)="setCurrentTime()">NOW</mat-button-toggle>
+    </mat-card>
+    <pre>{{time.value|json}}</pre>
+</body>
+
+
+

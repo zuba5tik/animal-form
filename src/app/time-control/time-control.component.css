@@ -1,0 +1,13 @@
+form {
+  display: inline-block;
+}
+div.a {
+  padding: 5px;
+}
+body {
+  text-align: center;
+  display: inline-block;
+}
+ngx-material-timepicker {
+  background-color: orange;
+}

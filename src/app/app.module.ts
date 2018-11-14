@@ -3,6 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatCheckboxModule,
   MatButtonModule,
   MatInputModule,
@@ -37,15 +38,18 @@ MatPaginatorModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { AppTestComponent } from './app-test/app-test.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { TimeControlComponent } from './time-control/time-control.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppTestComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    TimeControlComponent
   ],
   imports: [
     BrowserModule,
+    NgxMaterialTimepickerModule.forRoot(),
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
